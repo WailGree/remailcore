@@ -1,7 +1,7 @@
 ﻿using System;
 using MailKit;
 
-namespace SaintSender.Core.Models
+namespace RemailCore.Models
 {
     public class Email
     {

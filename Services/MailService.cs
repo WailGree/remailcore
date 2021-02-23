@@ -3,17 +3,19 @@ using MailKit.Net.Imap;
 using MailKit.Net.Smtp;
 using MailKit.Search;
 using MimeKit;
-using SaintSender.Core.Interfaces;
-using SaintSender.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.IsolatedStorage;
 using System.Net;
+using System.Net.Mail;
 using System.Reflection;
 using System.Xml.Serialization;
+using RemailCore.Models;
+using MailKit.Net.Smtp;
 
-namespace SaintSender.Core.Services
+
+namespace RemailCore.Services
 {
     public class MailService
     {
@@ -109,7 +111,7 @@ namespace SaintSender.Core.Services
                 Text = text
             };
 
-            using (var client = new SmtpClient())
+            using (var client = new MailKit.Net.Smtp.SmtpClient())
             {
                 client.Connect("imap.gmail.com", 465, true);
 

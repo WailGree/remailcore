@@ -5,7 +5,7 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SaintSender.Interfaces
+namespace RemailCore.Interfaces
 {
     public interface IBackupable
     {

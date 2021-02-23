@@ -4,9 +4,9 @@ using System.IO.IsolatedStorage;
 using System.Reflection;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
-using SaintSender.Core.Services;
+using RemailCore.Services;
 
-namespace SaintSender.Core.Models
+namespace RemailCore.Models
 {
     public class Account : ISerializable
     {
