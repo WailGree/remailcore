@@ -22,7 +22,7 @@ namespace RemailCore.Services
         private static List<Email> _emails = new List<Email>();
         private static string _path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Remail";
 
-        public static List<Email> GetMails(string username, string password)
+        public List<Email> GetMails(string username, string password)
         {
             _emails = new List<Email>();
             if (CheckInternet() || System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
@@ -50,7 +50,7 @@ namespace RemailCore.Services
             return _emails;
         }
 
-        private static bool CheckInternet()
+        private bool CheckInternet()
         {
             using (WebClient wc = new WebClient())
             {
@@ -71,7 +71,7 @@ namespace RemailCore.Services
             var uniqueIdList = client.Inbox.Search(SearchQuery.All);
             foreach (UniqueId id in uniqueIdList)
             {
-                var info = client.Inbox.Fetch(new[] { id }, MessageSummaryItems.Flags);
+                var info = client.Inbox.Fetch(new[] {id}, MessageSummaryItems.Flags);
                 var seen = info[0].Flags.Value.HasFlag(MessageFlags.Seen);
                 var mail = client.Inbox.GetMessage(id);
 
@@ -81,7 +81,7 @@ namespace RemailCore.Services
             }
         }
 
-        public static void SetEmailSeen(UniqueId uId, string username, string password)
+        public void SetEmailSeen(UniqueId uId, string username, string password)
         {
             if (CheckInternet() || System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
             {
@@ -99,7 +99,7 @@ namespace RemailCore.Services
         }
 
 
-        public static void SendNewEmail(string username, string password, string text, string subject, string toMail)
+        public void SendNewEmail(string username, string password, string text, string subject, string toMail)
         {
             var message = new MimeMessage();
             message.From.Add(new MailboxAddress(username));
@@ -123,7 +123,7 @@ namespace RemailCore.Services
             }
         }
 
-        public static bool IsCorrectLoginCredentials(string username, string password)
+        public bool IsCorrectLoginCredentials(string username, string password)
         {
             try
             {
@@ -149,6 +149,7 @@ namespace RemailCore.Services
             {
                 File.Delete(filePath);
             }
+
             List<Email> encremails = EncryptEmails(emails);
             using (StreamWriter sw = new StreamWriter(filePath))
             {
@@ -162,12 +163,14 @@ namespace RemailCore.Services
             List<Email> encryptedEmails = new List<Email>();
             foreach (Email unencryptedEmail in unencryptedEmails)
             {
-                Email encryptedEmail = new Email(unencryptedEmail.Seen, unencryptedEmail.Sender, unencryptedEmail.Subject, unencryptedEmail.Date, unencryptedEmail.Body, unencryptedEmail.UId);
+                Email encryptedEmail = new Email(unencryptedEmail.Seen, unencryptedEmail.Sender,
+                    unencryptedEmail.Subject, unencryptedEmail.Date, unencryptedEmail.Body, unencryptedEmail.UId);
                 encryptedEmail.Sender = EncryptService.Encrypt(unencryptedEmail.Sender);
                 encryptedEmail.Subject = EncryptService.Encrypt(unencryptedEmail.Subject);
                 encryptedEmail.Body = EncryptService.Encrypt(unencryptedEmail.Sender);
                 encryptedEmails.Add(encryptedEmail);
             }
+
             return encryptedEmails;
         }
 
@@ -180,7 +183,7 @@ namespace RemailCore.Services
                 using (StreamReader sw = new StreamReader(filePath))
                 {
                     XmlSerializer xs = new XmlSerializer(typeof(List<Email>));
-                    List<Email> encryptedEmails = (List<Email>)xs.Deserialize(sw);
+                    List<Email> encryptedEmails = (List<Email>) xs.Deserialize(sw);
                     List<Email> decryptedEmails = DecryptEmails(encryptedEmails);
                     return decryptedEmails;
                 }
@@ -194,12 +197,14 @@ namespace RemailCore.Services
             List<Email> decryptedEmails = new List<Email>();
             foreach (Email encryptedEmail in encryptedEmails)
             {
-                Email decryptedEmail = new Email(encryptedEmail.Seen, encryptedEmail.Sender, encryptedEmail.Subject, encryptedEmail.Date, encryptedEmail.Body, encryptedEmail.UId);
+                Email decryptedEmail = new Email(encryptedEmail.Seen, encryptedEmail.Sender, encryptedEmail.Subject,
+                    encryptedEmail.Date, encryptedEmail.Body, encryptedEmail.UId);
                 decryptedEmail.Sender = EncryptService.Decrypt(encryptedEmail.Sender);
                 decryptedEmail.Subject = EncryptService.Decrypt(encryptedEmail.Subject);
                 decryptedEmail.Body = EncryptService.Decrypt(encryptedEmail.Body);
                 decryptedEmails.Add(decryptedEmail);
             }
+
             return decryptedEmails;
         }
     }
