@@ -1,18 +1,13 @@
 ﻿using MailKit;
 using MailKit.Net.Imap;
-using MailKit.Net.Smtp;
 using MailKit.Search;
 using MimeKit;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.IO.IsolatedStorage;
 using System.Net;
-using System.Net.Mail;
-using System.Reflection;
 using System.Xml.Serialization;
 using RemailCore.Models;
-using MailKit.Net.Smtp;
 
 
 namespace RemailCore.Services
@@ -22,7 +17,7 @@ namespace RemailCore.Services
         private static List<Email> _emails = new List<Email>();
         private static string _path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Remail";
 
-        public List<Email> GetMails(string username, string password)
+        public List<Email> GetMails(string username, string password, bool checkBackup = false)
         {
             _emails = new List<Email>();
             if (CheckInternet() || System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
@@ -38,12 +33,18 @@ namespace RemailCore.Services
                     AddEmailsToList(client);
 
                     client.Disconnect(true);
-                    NewBackup(_emails);
+                    if (checkBackup)
+                    {
+                        NewBackup(_emails);
+                    }
                 }
             }
             else
             {
-                _emails = LoadBackup();
+                if (checkBackup)
+                {
+                    _emails = LoadBackup();
+                }
             }
 
             _emails.Reverse();
