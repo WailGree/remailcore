@@ -1,7 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.IO.IsolatedStorage;
-using System.Reflection;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 using RemailCore.Services;
