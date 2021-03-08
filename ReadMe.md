@@ -1,3 +1,3 @@
-﻿# SaintSender.Core
+﻿# RemailCore
 
-This layer contains all domain and application logic independently from the UI.
+Class Library of project "Remail". Contains MailService and Mail class for storing and managing emails.
