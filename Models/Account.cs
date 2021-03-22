@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Runtime.Serialization;
@@ -12,6 +13,7 @@ namespace RemailCore.Models
         public int Id { get; set; }
         [Required] [MaxLength(100)] public string Username { get; set; }
         [Required] [MaxLength(100)] public string Password { get; set; }
+        public List<Email> Emails { get; set; }
         public bool RememberUserCredentials { get; set; }
         private static string _path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Remail";
 
