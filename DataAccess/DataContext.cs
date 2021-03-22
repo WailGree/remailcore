@@ -7,7 +7,7 @@ namespace RemailCore.DataAccess
     public class DataContext : DbContext
     {
         public DataContext(DbContextOptions options) : base(options) { }
-        public DbSet<List<Account>> Accounts { get; set; }
-        public DbSet<List<Email>> Emails { get; set; }
+        public DbSet<Account> Accounts { get; set; }
+        public DbSet<Email> Emails { get; set; }
     }
 }
