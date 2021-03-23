@@ -10,7 +10,7 @@ namespace RemailCore.Models
         [Key] public int Id { get; set; }
         [Required] public bool Seen { get; set; }
         [Required] [MaxLength(100)] public string Sender { get; set; }
-        [Required] [MaxLength(100)] public string Subject { get; set; }
+        [Required] [MaxLength(200)] public string Subject { get; set; }
         [Required] public DateTime Date { get; set; }
         [Required] [MaxLength] public string Body { get; set; }
 
