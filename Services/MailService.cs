@@ -77,7 +77,7 @@ namespace RemailCore.Services
                 var mail = client.Inbox.GetMessage(id);
 
                 Email email = new Email(seen, mail.From.ToString(), mail.Subject, mail.Date.DateTime, mail.TextBody,
-                    id);
+                    (int) id.Id);
                 _emails.Add(email);
             }
         }

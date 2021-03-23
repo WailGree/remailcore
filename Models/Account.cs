@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
@@ -8,9 +11,12 @@ namespace RemailCore.Models
 {
     public class Account : ISerializable
     {
-        private string _username;
-        private string _password;
-        private bool _rememberUserCredentials;
+        
+        public int Id { get; set; }
+        [Required] [MaxLength(100)] public string Username { get; set; }
+        [Required] [MaxLength(100)] public string Password { get; set; }
+        public List<Email> Emails { get; set; }
+        public bool RememberUserCredentials { get; set; }
         private static string _path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Remail";
 
         public Account()
@@ -19,9 +25,9 @@ namespace RemailCore.Models
 
         public void Setup(string username, string password, bool rememberUserCredentials)
         {
-            _username = username;
-            _password = password;
-            _rememberUserCredentials = rememberUserCredentials;
+            Username = username;
+            Password = password;
+            RememberUserCredentials = rememberUserCredentials;
         }
 
         public static void SaveCredentials(Account account, string path = "Credentials.xml")
@@ -105,24 +111,6 @@ namespace RemailCore.Models
         {
             string filePath = Path.Combine(_path, path);
             return File.Exists(filePath);
-        }
-
-        public string Username
-        {
-            get => _username;
-            set => _username = value;
-        }
-
-        public string Password
-        {
-            get => _password;
-            set => _password = value;
-        }
-
-        public bool RememberUserCredentials
-        {
-            get => _rememberUserCredentials;
-            set => _rememberUserCredentials = value;
         }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
