@@ -5,8 +5,8 @@ namespace RemailCore.Models
 {
     public class Email
     {
-        public bool Seen { get; set; }
-        public string Sender { get; set; }
+        public bool Unread { get; set; }
+        public string From { get; set; }
         public string Subject { get; set; }
         public DateTime Date { get; set; }
         public string Body { get; set; }
@@ -15,8 +15,8 @@ namespace RemailCore.Models
 
         public Email(bool seen, string sender, string subject, DateTime date, string body, UniqueId uId)
         {
-            Seen = seen;
-            Sender = sender.Replace(@"""", String.Empty);
+            Unread = !seen;
+            From = sender.Replace(@"""", String.Empty);
             Subject = subject;
             Date = date;
             Body = body;
