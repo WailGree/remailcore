@@ -164,11 +164,11 @@ namespace RemailCore.Services
             List<Email> encryptedEmails = new List<Email>();
             foreach (Email unencryptedEmail in unencryptedEmails)
             {
-                Email encryptedEmail = new Email(unencryptedEmail.Seen, unencryptedEmail.Sender,
+                Email encryptedEmail = new Email(unencryptedEmail.Unread, unencryptedEmail.From,
                     unencryptedEmail.Subject, unencryptedEmail.Date, unencryptedEmail.Body, unencryptedEmail.UId);
-                encryptedEmail.Sender = EncryptService.Encrypt(unencryptedEmail.Sender);
+                encryptedEmail.From = EncryptService.Encrypt(unencryptedEmail.From);
                 encryptedEmail.Subject = EncryptService.Encrypt(unencryptedEmail.Subject);
-                encryptedEmail.Body = EncryptService.Encrypt(unencryptedEmail.Sender);
+                encryptedEmail.Body = EncryptService.Encrypt(unencryptedEmail.From);
                 encryptedEmails.Add(encryptedEmail);
             }
 
@@ -198,9 +198,9 @@ namespace RemailCore.Services
             List<Email> decryptedEmails = new List<Email>();
             foreach (Email encryptedEmail in encryptedEmails)
             {
-                Email decryptedEmail = new Email(encryptedEmail.Seen, encryptedEmail.Sender, encryptedEmail.Subject,
+                Email decryptedEmail = new Email(encryptedEmail.Unread, encryptedEmail.From, encryptedEmail.Subject,
                     encryptedEmail.Date, encryptedEmail.Body, encryptedEmail.UId);
-                decryptedEmail.Sender = EncryptService.Decrypt(encryptedEmail.Sender);
+                decryptedEmail.From = EncryptService.Decrypt(encryptedEmail.From);
                 decryptedEmail.Subject = EncryptService.Decrypt(encryptedEmail.Subject);
                 decryptedEmail.Body = EncryptService.Decrypt(encryptedEmail.Body);
                 decryptedEmails.Add(decryptedEmail);
