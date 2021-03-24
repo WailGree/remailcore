@@ -13,7 +13,7 @@ namespace RemailCore.Models
     {
         public int Id { get; set; }
         [Required] [MaxLength(100)] public string Username { get; set; }
-        [Required] [MaxLength(100)] public string Password { get; set; }
+        [Required] [MaxLength(128)] public string Password { get; set; }
         public List<Email> Emails { get; set; } = new List<Email>();
         public bool RememberUserCredentials { get; set; }
         private static string _path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Remail";
