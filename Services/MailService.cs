@@ -20,7 +20,7 @@ namespace RemailCore.Services
         public List<Email> GetMails(string username, string password, bool checkBackup = false)
         {
             _emails = new List<Email>();
-            if (CheckInternet() || System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
+            if (CheckInternet())
             {
                 using (var client = new ImapClient())
                 {
@@ -53,18 +53,7 @@ namespace RemailCore.Services
 
         private bool CheckInternet()
         {
-            using (WebClient wc = new WebClient())
-            {
-                try
-                {
-                    var responseBody = wc.DownloadString("http://vanenet.hu/");
-                    return responseBody.Contains("Van");
-                }
-                catch (Exception e)
-                {
-                    return false;
-                }
-            }
+            return System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable();
         }
 
         private static void AddEmailsToList(ImapClient client)
@@ -84,7 +73,7 @@ namespace RemailCore.Services
 
         public void SetEmailSeen(UniqueId uId, string username, string password)
         {
-            if (CheckInternet() || System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
+            if (CheckInternet())
             {
                 using (var client = new ImapClient())
                 {
