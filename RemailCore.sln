@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemailCore", "RemailCore.csproj", "{4B7072F9-94A4-411F-99B0-C1ADE3CF847C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemailCore.Library", "RemailCore.Library\RemailCore.Library.csproj", "{30A436CC-80CF-4DF5-B3FC-F131712A35C4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemailCore.Tests", "RemailCore.Tests\RemailCore.Tests.csproj", "{04DBFD0E-18FD-4749-A28C-1B3D05FB1BE3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4B7072F9-94A4-411F-99B0-C1ADE3CF847C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4B7072F9-94A4-411F-99B0-C1ADE3CF847C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4B7072F9-94A4-411F-99B0-C1ADE3CF847C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4B7072F9-94A4-411F-99B0-C1ADE3CF847C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30A436CC-80CF-4DF5-B3FC-F131712A35C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30A436CC-80CF-4DF5-B3FC-F131712A35C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30A436CC-80CF-4DF5-B3FC-F131712A35C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30A436CC-80CF-4DF5-B3FC-F131712A35C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04DBFD0E-18FD-4749-A28C-1B3D05FB1BE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04DBFD0E-18FD-4749-A28C-1B3D05FB1BE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04DBFD0E-18FD-4749-A28C-1B3D05FB1BE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04DBFD0E-18FD-4749-A28C-1B3D05FB1BE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
