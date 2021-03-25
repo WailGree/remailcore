@@ -1,8 +1,8 @@
-RemailCore.Library/.vs/
 RemailCore.Library/bin/
 RemailCore.Library/obj/
-RemailCore.Tests/.vs/
 RemailCore.Tests/bin/
 RemailCore.Tests/obj/
-
+.vs/
+bin/
+obj/
 
