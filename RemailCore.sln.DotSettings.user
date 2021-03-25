@@ -1,0 +1,8 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=75734d92_002Dcc01_002D4966_002D92cd_002D4062d509e1b6/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="SetupTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::5865F493-89D7-4FAB-99C6-D73A0CF0E95D::.NETCoreApp,Version=v3.1::RemailCore.Models.Tests.AccountTests.Setup_Password_ShouldReturnPassword&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::5865F493-89D7-4FAB-99C6-D73A0CF0E95D::.NETCoreApp,Version=v3.1::RemailCore.Models.Tests.AccountTests.SaveCredentials_Account_ShouldReturnAccount&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::5865F493-89D7-4FAB-99C6-D73A0CF0E95D::.NETCoreApp,Version=v3.1::RemailCore.Models.Tests.EncryptServiceTest.Encrypt_Text_ShouldNotReturnSameText&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
