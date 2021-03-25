@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemailCore", "RemailCore.csproj", "{4B7072F9-94A4-411F-99B0-C1ADE3CF847C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemailCore.Library", "RemailCore.Library.csproj", "{4B7072F9-94A4-411F-99B0-C1ADE3CF847C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemailCoreTests", "..\RemailCoreTests\RemailCoreTests.csproj", "{5865F493-89D7-4FAB-99C6-D73A0CF0E95D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemailCore.Tests", "..\RemailCoreTests\RemailCore.Tests.csproj", "{A36B2520-1591-4DB8-8919-50CEDED55524}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{4B7072F9-94A4-411F-99B0-C1ADE3CF847C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B7072F9-94A4-411F-99B0-C1ADE3CF847C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B7072F9-94A4-411F-99B0-C1ADE3CF847C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5865F493-89D7-4FAB-99C6-D73A0CF0E95D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5865F493-89D7-4FAB-99C6-D73A0CF0E95D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5865F493-89D7-4FAB-99C6-D73A0CF0E95D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5865F493-89D7-4FAB-99C6-D73A0CF0E95D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A36B2520-1591-4DB8-8919-50CEDED55524}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A36B2520-1591-4DB8-8919-50CEDED55524}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A36B2520-1591-4DB8-8919-50CEDED55524}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A36B2520-1591-4DB8-8919-50CEDED55524}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
