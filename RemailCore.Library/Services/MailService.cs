@@ -5,12 +5,11 @@ using MimeKit;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Net;
 using System.Xml.Serialization;
-using RemailCore.Models;
+using RemailCore.Library.Models;
 
 
-namespace RemailCore.Services
+namespace RemailCore.Library.Services
 {
     public class MailService
     {

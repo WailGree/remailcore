@@ -4,7 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace RemailCore.Services
+namespace RemailCore.Library.Services
 {
     public class EncryptService
     {

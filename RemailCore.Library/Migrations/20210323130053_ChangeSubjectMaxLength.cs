@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace RemailCore.Migrations
+namespace RemailCore.Library.Migrations
 {
     public partial class ChangeSubjectMaxLength : Migration
     {

@@ -1,7 +1,7 @@
-﻿using RemailCore.Models;
-using NUnit.Framework;
+﻿using NUnit.Framework;
+using RemailCore.Library.Models;
 
-namespace RemailCore.Models.Tests
+namespace RemailCore.Tests.Models
 {
     [TestFixture]
     public class AccountTests
@@ -43,7 +43,5 @@ namespace RemailCore.Models.Tests
             Account accountUnderTest = Account.LoadCredentials("CredentialsTest.xml");
             Assert.AreEqual(account, accountUnderTest);
         }
-
-
     }
 }

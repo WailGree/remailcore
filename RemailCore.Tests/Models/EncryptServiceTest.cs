@@ -1,14 +1,12 @@
-﻿using System;
-using RemailCore.Models;
+﻿using RemailCore.Library.Models;
 using NUnit.Framework;
-using RemailCore.Services;
+using RemailCore.Library.Services;
 
-namespace RemailCore.Models.Tests
+namespace RemailCore.Tests.Models
 {
     [TestFixture]
     public class EncryptServiceTest
     {
-
         [Test]
         public void Encrypt_Text_ShouldNotReturnSameText()
         {
@@ -33,12 +31,5 @@ namespace RemailCore.Models.Tests
             string decryptedText = EncryptService.Decrypt(encryptedText);
             Assert.AreEqual(account.Username, decryptedText);
         }
-
-
-
-
-
-
-
     }
 }

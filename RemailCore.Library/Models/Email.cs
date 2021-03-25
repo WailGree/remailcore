@@ -1,9 +1,8 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using MailKit;
 
-namespace RemailCore.Models
+namespace RemailCore.Library.Models
 {
     public class Email
     {

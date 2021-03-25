@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
-using RemailCore.Services;
+using RemailCore.Library.Services;
 
-namespace RemailCore.Models
+namespace RemailCore.Library.Models
 {
     public class Account : ISerializable
     {

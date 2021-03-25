@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Net.Mail;
 
-namespace RemailCore.Interfaces
+namespace RemailCore.Library.Interfaces
 {
     public interface IBackupable
     {

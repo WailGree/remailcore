@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace RemailCore.Migrations
+namespace RemailCore.Library.Migrations
 {
     public partial class InitialDBCreation : Migration
     {
