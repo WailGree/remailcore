@@ -1,3 +1,7 @@
+RemailCore.Library/bin/
+RemailCore.Library/obj/
+RemailCore.Tests/bin/
+RemailCore.Tests/obj/
 .vs/
 bin/
 obj/
