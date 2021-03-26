@@ -1,4 +1,4 @@
-﻿# RemailCore
+# RemailCore
 
 Class Library of project "Remail". Contains MailService and Mail class for storing and managing emails. Made in .NET Standard 2.1
 
@@ -47,5 +47,3 @@ Class that contains user credentials for use of mail server.
 
 ## Email
 Class structure for storing emails.
-=======
-Class Library of project "Remail". Contains MailService and Mail class for storing and managing emails.
